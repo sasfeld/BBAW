@@ -24,6 +24,22 @@ import bbaw.wsp.crawler.accepter.ResourceAccepter;
 public class WebHarvester {
 
 	/**
+	 * The reference to the resourceAccepter
+	 */
+	private ResourceAccepter resourceAccepter;
+
+	/**
+	 * Set a ResourceAccepter.
+	 * @param accepter - the ResourceAccepter (StrategyPattern)
+	 */
+	public void setResourceAccepter(ResourceAccepter accepter) {
+		if(accepter == null) {
+			throw new IllegalArgumentException("Invalid accepter in setResourceAccepter()");
+		}
+		this.resourceAccepter = accepter;
+	}
+	
+	/**
 	 * Harvest an WebResource located by an URL and return the resources based
 	 * on that URL.
 	 * 
@@ -32,7 +48,7 @@ public class WebHarvester {
 	 * @return a set of String that contains all accepted resources
 	 * @throws IllegalArgumentException if the startURL does not exist
 	 */
-	public static Set<String> harvest(final String startURL) throws IllegalArgumentException{
+	public Set<String> harvest(final String startURL) throws IllegalArgumentException{
 		final DefaultHttpClient httpclient = new DefaultHttpClient();
 		final HttpGet httpget = new HttpGet(startURL);
 
@@ -50,9 +66,9 @@ public class WebHarvester {
 				// Fetch group 1 (from regular expression above)
 				String uri = m.group(1);
 
-				if (ResourceAccepter.acceptLeaf(uri)) {
+				if (this.resourceAccepter.acceptLeaf(uri)) {
 					leafs.add(startURL + uri);
-				} else if (ResourceAccepter.acceptNode(uri)) {
+				} else if (this.resourceAccepter.acceptNode(uri)) {
 					leafs.addAll(harvest(startURL + uri));
 				}
 			}
@@ -68,13 +84,5 @@ public class WebHarvester {
 			// "Free" HTTPconnection
 			httpclient.getConnectionManager().shutdown();
 		}		
-	}
-
-	/*
-	 * Test of the WebHarvester
-	 */
-	public static void main(String[] args) {
-		Set<String> results = WebHarvester.harvest("http://192.168.1.203/wsp/");
-		System.out.println(results);
 	}
 }
