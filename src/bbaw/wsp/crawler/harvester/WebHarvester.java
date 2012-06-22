@@ -21,17 +21,14 @@ import bbaw.wsp.crawler.accepter.ResourceAccepter;
  * @date 08.06.2012
  * @version 0.5
  */
-public class WebHarvester {
+public class WebHarvester implements IHarvester{
 
 	/**
 	 * The reference to the resourceAccepter
 	 */
 	private ResourceAccepter resourceAccepter;
 
-	/**
-	 * Set a ResourceAccepter.
-	 * @param accepter - the ResourceAccepter (StrategyPattern)
-	 */
+	
 	public void setResourceAccepter(ResourceAccepter accepter) {
 		if(accepter == null) {
 			throw new IllegalArgumentException("Invalid accepter in setResourceAccepter()");
@@ -39,18 +36,10 @@ public class WebHarvester {
 		this.resourceAccepter = accepter;
 	}
 	
-	/**
-	 * Harvest an WebResource located by an URL and return the resources based
-	 * on that URL.
-	 * 
-	 * @param startURL
-	 *            - the URL to begin the harvest
-	 * @return a set of String that contains all accepted resources
-	 * @throws IllegalArgumentException if the startURL does not exist
-	 */
-	public Set<String> harvest(final String startURL) throws IllegalArgumentException{
+	
+	public Set<String> harvest(final String startURI) throws IllegalArgumentException{
 		final DefaultHttpClient httpclient = new DefaultHttpClient();
-		final HttpGet httpget = new HttpGet(startURL);
+		final HttpGet httpget = new HttpGet(startURI);
 
 		final ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
@@ -67,9 +56,9 @@ public class WebHarvester {
 				String uri = m.group(1);
 
 				if (this.resourceAccepter.acceptLeaf(uri)) {
-					leafs.add(startURL + uri);
+					leafs.add(startURI + uri);
 				} else if (this.resourceAccepter.acceptNode(uri)) {
-					leafs.addAll(harvest(startURL + uri));
+					leafs.addAll(harvest(startURI + uri));
 				}
 			}
 			

@@ -9,28 +9,21 @@ import bbaw.wsp.crawler.accepter.ResourceAccepter;
 
 /**
  * This static class offers methods to crawl an (UNIX-)file system.
- * 
+ * It implements the {@link IHarvester} interface.
  * 
  * @author Sascha Feldmann (wsp-shk1)
  * @date 08.06.2012
  * @version 0.0.1
  */
-public class FileSystemHarvester {
+public class FileSystemHarvester implements IHarvester{
 	/**
 	 * The reference to the resourceAccepter
 	 */
 	private ResourceAccepter resourceAccepter;
 
-	/**
-	 * Harvest an (UNIX-)file system beginning at a specified path and return all accepted resources based on that path.
-	 * 
-	 * @param startDIR
-	 *            - the directory to begin the harvest
-	 * @return a set of String that contains all accepted resources
-	 * @throws IllegalArgumentException if the startDir is not a valid directory
-	 */
-	public Set<String> harvest(final String startDir) throws IllegalArgumentException{
-		File baseDir = new File(startDir);
+	
+	public Set<String> harvest(final String startURI) throws IllegalArgumentException{
+		File baseDir = new File(startURI);
 		if(!baseDir.exists()) {
 			throw new IllegalArgumentException("Can't find base directory in FileSystemHarvester.harvest()!");
 		}
