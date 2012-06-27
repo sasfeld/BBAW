@@ -25,7 +25,7 @@
  *
  */
 
-package examples;
+package bbaw.wsp.crawler.examples;
 
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.HttpClient;

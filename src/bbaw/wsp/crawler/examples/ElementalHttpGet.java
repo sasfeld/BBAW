@@ -25,7 +25,7 @@
  *
  */
 
-package examples;
+package bbaw.wsp.crawler.examples;
 
 import java.net.Socket;
 
