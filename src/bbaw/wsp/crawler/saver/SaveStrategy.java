@@ -11,5 +11,9 @@ package bbaw.wsp.crawler.saver;
  */
 public abstract class SaveStrategy {	
 	
-	public abstract void saveFile(final String uri, final String text);
+	public abstract void saveFile(final String startURI, final String uri, final String text);
+
+	public void saveFile(String uri, String text) {
+				
+	}
 }

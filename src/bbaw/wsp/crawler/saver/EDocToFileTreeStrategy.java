@@ -57,4 +57,10 @@ public class EDocToFileTreeStrategy extends SaveStrategy {
 			}
 		}
 	}
+
+	@Override
+	public void saveFile(String startURI, String uri, String text) {
+		// TODO Auto-generated method stub
+		
+	}
 }
