@@ -2,17 +2,13 @@ package bbaw.wsp.crawler.parser;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.Parser;
-import org.apache.tika.parser.microsoft.OfficeParser;
 import org.apache.tika.sax.BodyContentHandler;
 import org.xml.sax.ContentHandler;
-import org.xml.sax.SAXException;
 
 import bbaw.wsp.crawler.control.DebugMode;
 import bbaw.wsp.crawler.tools.LogFile;
@@ -28,7 +24,7 @@ public abstract class ResourceParser {
 	 * The File instance.
 	 */
 	protected File uri;
-	private Parser parser;
+	protected Parser parser;
 	/**
 	 * Create a new PdfParser instance.
 	 * 
@@ -73,6 +69,7 @@ public abstract class ResourceParser {
 			ParseContext context = new ParseContext();
 			this.parser.parse(input, textHandler, metadata, context);
 			input.close();
+			textHandler.endDocument();
 			return textHandler.toString();
 		} catch (Exception e) {
 			// Write log
