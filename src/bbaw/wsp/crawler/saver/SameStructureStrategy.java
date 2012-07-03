@@ -26,17 +26,15 @@ public class SameStructureStrategy extends SaveStrategy {
 		this.saveDir = saveDir;
 	}
 	
-	@Override
 	/**
 	 * Save a fulltext as a .txt file.
 	 */
 	public void saveFile(String startUri, String uri, String text) {
 		File startFile = new File(startUri);
 		String startDir = startFile.getName();
-		String relativePath = uri.replaceFirst(startUri, "");
-		if(new File(relativePath).isFile()) {
-			relativePath = "";
-		}
+		startUri = startUri.replace("/", "\\"); // match both file system styles 
+		String relativePath = uri.replace(startUri, "");		
+		
 		
 		String dir = this.saveDir + "/" + startDir + "/" + relativePath;
 		if (DebugMode.DEBUG) {
