@@ -16,8 +16,9 @@ import bbaw.wsp.crawler.tools.TextFileWriter;
 
 /**
  * This class is the API for all parsers.
+ * 
  * @author Sascha Feldmann (wsp-shk1)
- *
+ * 
  */
 public abstract class ResourceParser {
 	/**
@@ -25,6 +26,7 @@ public abstract class ResourceParser {
 	 */
 	protected File uri;
 	protected Parser parser;
+
 	/**
 	 * Create a new PdfParser instance.
 	 * 
@@ -38,10 +40,10 @@ public abstract class ResourceParser {
 		if (uri == null || uri.isEmpty()) {
 			throw new IllegalArgumentException(
 					"The value for the parameter uri in the constructor of PdfParserImpl mustn't be empty.");
-		}		
+		}
 		if (parser == null) {
 			throw new IllegalArgumentException(
-					"The value for the parameter parser in the constructor of PdfParserImpl mustn't be empty.");	
+					"The value for the parameter parser in the constructor of PdfParserImpl mustn't be empty.");
 		}
 		File f = new File(uri);
 		if (!f.exists()) {
@@ -51,9 +53,10 @@ public abstract class ResourceParser {
 		this.uri = f;
 		this.parser = parser;
 	}
-	
+
 	/**
 	 * Parse a document and return the fulltext.
+	 * 
 	 * @return a String - the fulltext
 	 */
 	public String parse() {
@@ -65,7 +68,7 @@ public abstract class ResourceParser {
 			}
 			// Don't limit the amount of characters -> -1 as argument
 			ContentHandler textHandler = new BodyContentHandler(-1);
-			Metadata metadata = new Metadata();			
+			Metadata metadata = new Metadata();
 			ParseContext context = new ParseContext();
 			this.parser.parse(input, textHandler, metadata, context);
 			input.close();
@@ -73,11 +76,8 @@ public abstract class ResourceParser {
 			return textHandler.toString();
 		} catch (Exception e) {
 			// Write log
-			TextFileWriter.getInstance().writeTextFile(
-					LogFile.fileRef.getParentFile().getPath(),
-					LogFile.fileRef.getName(),
-					"Problem while parsing file " + this.uri
-							+ "  -- exception: " + e.getMessage() + "\n", true);
+			LogFile.writeLog("Problem while parsing file " + this.uri
+					+ "  -- exception: " + e.getMessage() + "\n");
 			return null;
 		}
 	}

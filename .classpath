@@ -28,5 +28,10 @@
 	<classpathentry kind="lib" path="C:/ownProjectsWorkspace/webharvest2b1-bin/mail.jar"/>
 	<classpathentry kind="lib" path="C:/ownProjectsWorkspace/mysql-connector-java-3.0.17-ga/mysql-connector-java-3.0.17-ga/mysql-connector-java-3.0.17-ga-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/Installationen/tika-app-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/jdom-2.0.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/jdom-2.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/lib/jaxen-1.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/lib/xml-apis.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

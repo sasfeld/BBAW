@@ -40,6 +40,9 @@ public abstract class ResourceAccepter {
 	 *  PNG extension.
 	 */
 	private static final Object EXT_PNG = ".png";
+	public static final Object EXT_HTML = ".html";
+	public static final Object EXT_XHTML = ".xhtml";
+	public static final Object EXT_HTM = ".htm";
 	
 	protected Set<String> acceptedResources;
 

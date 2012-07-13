@@ -21,12 +21,12 @@ import bbaw.wsp.crawler.tools.LogFile;
 import bbaw.wsp.crawler.tools.TextFileWriter;
 
 /**
- * This class executes the parsing.
+ * This class executes the fulltext parsing.
  * 
  * @author Sascha Feldmann (wsp-shk1)
  * 
  */
-public class ParserExcecution {
+public class FulltextParserExcecution {
 
 	private IHarvester harvester;
 	private SaveStrategy saveStrategy;
@@ -40,11 +40,11 @@ public class ParserExcecution {
 	 * @param accepter
 	 *            - the accepter instance
 	 */
-	public ParserExcecution(IHarvester harvester, FileSystemAccepter accepter,
+	public FulltextParserExcecution(IHarvester harvester, FileSystemAccepter accepter,
 			SaveStrategy saveStrategy) {
 		if (harvester == null || accepter == null || saveStrategy == null) {
 			throw new IllegalArgumentException(
-					"Parameters mustn't be null in ParserExecution!");
+					"Parameters mustn't be null in FulltextParserExecution!");
 		}
 		this.harvester = harvester;
 		this.harvester.setResourceAccepter(accepter);
@@ -115,13 +115,9 @@ public class ParserExcecution {
 					this.saveStrategy.saveFile(startURI, uri, fulltext);
 				}
 			} else {
-				TextFileWriter.getInstance()
-						.writeTextFile(
-								LogFile.fileRef.getParentFile().getPath(),
-								LogFile.fileRef.getName(),
-								"There's no parser available for this type of resource: "
-										+ this.resourceAccepter
-												.getExtension(uri), true);
+				LogFile.writeLog("There's no parser available for this type of resource: "
+						+ this.resourceAccepter
+						.getExtension(uri));
 			}
 		}
 	}

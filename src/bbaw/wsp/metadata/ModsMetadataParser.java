@@ -8,6 +8,8 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.xpath.XPath;
 
+import bbaw.wsp.crawler.tools.LogFile;
+
 /**
  * This class is able to parse a MODS file that has the specified values of the
  * old knowledge store.
@@ -29,7 +31,7 @@ public class ModsMetadataParser {
 	 *             if the uri is null, empty or doesn't refer to an existing
 	 *             file.
 	 */
-	public ModsMetadataParser(String uri) {
+	public ModsMetadataParser(final String uri) {
 		if (uri == null || uri.isEmpty()) {
 			throw new IllegalArgumentException(
 					"The value for the parameter uri in the constructor of ModsMetadataParser mustn't be empty.");
@@ -156,19 +158,32 @@ public class ModsMetadataParser {
 				return persIds;
 			} else {
 				Object result = xPath.selectSingleNode(this.doc);
+				
+				if(result != null) {
 				return ModsHelper.removeCtrlChars(result.toString());
+				}
 			}
-		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
+		} catch (JDOMException | IllegalArgumentException e) {
+			LogFile.writeLog("Problem while parsing MODS-file " + this.doc.toString()
+					+ "  -- exception: " + e.getMessage() + "\n");
+			if(moreNodes) {
+				String[] ret = {""}; 
+				return ret;
+			}
+			
+			return "";
 		}
+		
+		return "";
 
 	}
 
 	public static void main(String[] args) {
+//		String url = "C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/eXist-wsp/db/wsp/dataMods/20090714-2-WS-BBAW.xml";
+//		String url = "C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/eXist-wsp/db/wsp/dataMods/20090709-1-WS-BBAW.xml";
+		String url = "C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/eXist-wsp/db/wsp/dataMods/20090716-5-WS-BBAW.xml";
 		ModsMetadataParser parser = new ModsMetadataParser(
-				"C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/eXist-wsp/db/wsp/dataMods/20090709-1-WS-BBAW.xml");
+				url);
 		WSPMetadataRecord obj = parser.parse();
 
 		System.out.println(obj);
