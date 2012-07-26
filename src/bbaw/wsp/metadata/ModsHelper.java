@@ -74,6 +74,46 @@ public class ModsHelper {
 		}
 		return ret;				
 	}
+	
+	/** 
+	 * Remove the characters caused by Saxon.
+	 * This is necessary if you parse an attribute because XPath then returns the name of the attribute.
+	 * @param input - the return value of Saxon.
+	 * @return the cleaned String.
+	 */
+	public static String removeAttributeChars(final String input) {
+		if(input == null ) {
+			throw new IllegalArgumentException(
+					"The value for the parameter input in removeAttributeChars mustn't be empty.");
+		}		
+		// Ex. value: []
+		String ret = input.replaceFirst("(\\w)+=(\")", "");
+		int lastPos = input.lastIndexOf("\"");
+		if(input.length() != 0 && lastPos == input.length()-1) {
+			ret = ret.substring(0, ret.length()-1);			
+		}
+		return ret;
+	}
 
+	/** 
+	 * Remove the characters caused by Saxon.
+	 * This is necessary if you parse an attribute because XPath then returns the name of the attribute.
+	 * @param input - the return value [an array of String] of Saxon.
+	 * @return the cleaned String.
+	 */
+	public static String[] removeAttributeChars(final String[] input) {
+		if(input == null) {
+			throw new IllegalArgumentException(
+					"The parameter array input mustn't be empty.");
+		}		
+		String[] ret = new String[input.length];
+		int i = 0;
+		for (String element : input) {
+			String newEl = removeAttributeChars(element);
+			ret[i] = newEl;
+			++i;
+		}
+		return ret;		
+	}
 	
 }
