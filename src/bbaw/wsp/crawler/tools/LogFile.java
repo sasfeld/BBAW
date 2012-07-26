@@ -1,6 +1,7 @@
 package bbaw.wsp.crawler.tools;
 
 import java.io.File;
+import java.util.Date;
 
 
 /**
@@ -21,9 +22,9 @@ public class LogFile {
 	 * @param message - the String to be added to the log file.
 	 */
 	public static void writeLog(String message) {
-		TextFileWriter.getInstance().writeTextFile(
+		TextFileWriter.getInstance().writeTextFile(				
 				LogFile.fileRef.getParentFile().getPath(),
-				LogFile.fileRef.getName(), message, true);
+				LogFile.fileRef.getName(),new Date().getDate()+ " " + message, true);
 	}
 
 }
