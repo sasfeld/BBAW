@@ -33,5 +33,14 @@
 	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/lib/jaxen-1.1.3.jar"/>
 	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/lib/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="C:/eclipseWorkspace/jdom-2.0.2/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-dom4j.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-dom.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-jdom.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-s9api.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-sql.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-xom.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-xpath.jar"/>
+	<classpathentry kind="lib" path="C:/eclipseWorkspace/saxonb9-1-0-8j/saxon9-xqj.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
