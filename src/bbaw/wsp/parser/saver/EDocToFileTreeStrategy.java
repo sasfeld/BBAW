@@ -1,6 +1,7 @@
 package bbaw.wsp.parser.saver;
 
 import java.io.File;
+import java.util.List;
 
 import bbaw.wsp.parser.control.DebugMode;
 import bbaw.wsp.parser.tools.TextFileWriter;
@@ -37,7 +38,7 @@ public class EDocToFileTreeStrategy implements ISaveStrategy {
 	 * @param text
 	 *            - the text to be saved.
 	 */
-	public void saveFile(final String uri, final String text) {
+	public Object saveFile(final String uri, final String text) {
 		File saveFile = new File(uri);
 		String dir = this.saveDir
 				+ "/"
@@ -56,11 +57,20 @@ public class EDocToFileTreeStrategy implements ISaveStrategy {
 				System.out.println("Couldn't write file.");
 			}
 		}
+		
+		return null;
+	}
+
+
+
+	@Override
+	public Object saveFile(String startURI, String uri, List<String> textPages) {
+		return null;
+		
 	}
 
 	@Override
-	public void saveFile(String startURI, String uri, String text) {
-		// TODO Auto-generated method stub
-		
+	public Object saveFile(String startURI, String uri, String text) {
+		return null;
 	}
 }

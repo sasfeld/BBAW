@@ -5,8 +5,13 @@ package bbaw.wsp.parser.tools;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 
 import bbaw.wsp.parser.control.DebugMode;
 
@@ -45,7 +50,10 @@ public class TextFileWriter {
 			dir.mkdirs();
 		}
 		File fileToWrite = new File(dir, fileName);
-		
+		if (DebugMode.DEBUG) {
+			System.out
+					.println("TextFileWriter: Saving file "+fileToWrite);
+		}
 		
 		FileWriter w;
 		BufferedWriter buffer;
@@ -59,12 +67,44 @@ public class TextFileWriter {
 			return true;
 		} catch (IOException e) {
 			if(DebugMode.DEBUG) {
-				System.out.println(e);
+				System.out.println("problem: " +  e);
 				}	
 			return false;
 		} 		
 	}
 
-
+	public boolean writeTextFileUtf8(final String pDir, final String fileName, final String text, final boolean append) {
+	  File dir = new File(pDir);    
+    if(!dir.exists()) {
+      dir.mkdirs();
+    }
+    File fileToWrite = new File(dir, fileName);
+    if (DebugMode.DEBUG) {
+      System.out
+          .println("TextFileWriter: Saving file "+fileToWrite);
+    }
+    
+    try {
+      Writer w = new OutputStreamWriter(new FileOutputStream(fileToWrite), "UTF8");
+      BufferedWriter buffer = new BufferedWriter(w);
+      
+      buffer.write(text);
+      
+      buffer.flush();
+      buffer.close();
+      w.close();
+      
+      return true;
+      
+    } catch (UnsupportedEncodingException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    
+    return false;
+	}
 	
 }

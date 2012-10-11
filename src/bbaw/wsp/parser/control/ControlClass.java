@@ -26,7 +26,7 @@ import bbaw.wsp.parser.saver.ISaveStrategy;
  *
  */
 public class ControlClass {
-	
+	public static String TEMPFOLDER = "C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/ParserTest/temp";
 	
 	public ControlClass() {
 	}
@@ -42,26 +42,27 @@ public class ControlClass {
 	 */
 	public void runParsing() throws IOException, SAXException, TikaException {
 		Set<String> acceptedResources = new HashSet<String>();
-		acceptedResources.add(".doc");
+//		acceptedResources.add(".doc");
 		acceptedResources.add(".pdf");
-		acceptedResources.add(".odt");
-		acceptedResources.add(".xml");
-		acceptedResources.add(".jpg");
-		acceptedResources.add(".png");
-		acceptedResources.add(".html");
-		FileSystemAccepter accepter = new FileSystemAccepter(acceptedResources );
+//		acceptedResources.add(".odt");
+//		acceptedResources.add(".xml");
+//		acceptedResources.add(".jpg");
+//		acceptedResources.add(".png");
+//		acceptedResources.add(".html");
+//		FileSystemAccepter accepter = new FileSystemAccepter(acceptedResources );
+		FileSystemAccepter accepter = new FileSystemAccepter("C:/ownProjectsWorkspace/wsp/bbaw.wsp.parser/config/harvester.xml");
 		String saveDir = "C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/ParserTest";
 		ISaveStrategy saveStrategy = new SameStructureStrategy(saveDir);
 		FulltextParserExcecution e = new FulltextParserExcecution(new FileSystemHarvester(accepter), saveStrategy  );
-//		e.parse("C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/opus32_bbaw_volltexte_20120607/volltexte/");
+		e.parse("C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/opus32_bbaw_volltexte_20120607/volltexte/");
 //		e.parse("//192.168.1.203/wsp-web-test");
 //		e.parse("C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/OxygenXMLEditor/samples");
 		
-		MetadataParserExecution metaParser = new MetadataParserExecution(new FileSystemHarvester(accepter));
-		Set<WSPMetadataRecord> results = metaParser.parse("C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/eXist-wsp/db/wsp/dataMods/");
-		for (WSPMetadataRecord wspMetadataRecord : results) {
-			System.out.println(wspMetadataRecord);
-		}
+//		MetadataParserExecution metaParser = new MetadataParserExecution(new FileSystemHarvester(accepter));
+//		Set<WSPMetadataRecord> results = metaParser.parse("C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/eXist-wsp/db/wsp/dataMods/");
+//		for (WSPMetadataRecord wspMetadataRecord : results) {
+//			System.out.println(wspMetadataRecord);
+//		}
 	}	
 	
 	public static void main (String[] args)throws IOException, SAXException, TikaException  {

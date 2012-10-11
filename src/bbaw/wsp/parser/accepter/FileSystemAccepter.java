@@ -7,10 +7,18 @@ public class FileSystemAccepter extends ResourceAccepter{
 
 	/**
 	 * Create a new FileSystemAccepter.
-	 * @param acceptedResources - a set that contains the accepted ressources as string
+	 * @param acceptedResources - a set that contains the accepted resources as string
 	 */
-	public FileSystemAccepter(Set<String> acceptedResources) {
+	public FileSystemAccepter(final Set<String> acceptedResources) {
 		super(acceptedResources);		
+	}
+	
+	/**
+	 * Create a new FileSystemAccepter.
+	 * @param configUri - the URI to the (harvester) config file.
+	 */
+	public FileSystemAccepter(final String configUri) {
+		super(configUri);
 	}
 
 	private File checkIfFile(String uri) {

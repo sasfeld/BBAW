@@ -3,6 +3,8 @@
  */
 package bbaw.wsp.parser.saver;
 
+import java.util.List;
+
 
 /**
  * The interface Strategy that all other strategie classes extend.
@@ -11,7 +13,13 @@ package bbaw.wsp.parser.saver;
  */
 public interface ISaveStrategy {	
 	
-	abstract void saveFile(final String startURI, final String uri, final String text);
-
-	void saveFile(String uri, String text);
+	/**
+	 * Save a fulltext.
+	 */
+	Object saveFile(final String startURI, final String uri, final String text);
+	
+	/**
+	 * Save fulltext for a specified PDF page.
+	 */
+	Object saveFile(final String startURI, String uri, List<String> textPages);
 }

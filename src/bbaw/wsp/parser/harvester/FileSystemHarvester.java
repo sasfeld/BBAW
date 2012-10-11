@@ -16,10 +16,6 @@ import bbaw.wsp.parser.accepter.ResourceAccepter;
  * @version 0.0.1
  */
 public class FileSystemHarvester extends Harvester{
-	/**
-	 * The reference to the resourceAccepter
-	 */
-	private ResourceAccepter resourceAccepter;
 	
 	public FileSystemHarvester(ResourceAccepter accepter) {
 		super(accepter);		
