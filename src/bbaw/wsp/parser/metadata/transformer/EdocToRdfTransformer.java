@@ -13,6 +13,7 @@ import java.util.Locale;
 import bbaw.wsp.parser.fulltext.document.PDFDocument;
 import bbaw.wsp.parser.fulltext.parsers.EdocIndexMetadataFetcherTool;
 import bbaw.wsp.parser.metadata.transformer.util.TemplateMapper;
+import bbaw.wsp.parser.tools.joseph.DCFetcherTool;
 import bbaw.wsp.parser.tools.joseph.MetadataRecord;
 import de.mpg.mpiwg.berlin.mpdl.exception.ApplicationException;
 
@@ -30,9 +31,9 @@ public class EdocToRdfTransformer extends ToRdfTransformer {
    */
   private static final String RDF_TEMPLATE_URL = "C:/Dokumente und Einstellungen/wsp-shk1/Eigene Dateien/ParserTest/XSLTTest/templates/zielformat.xml";
   /**
-   * The aggregation name is it is stored in the quad.
+   * The prefix of the aggregation name is it is stored in the quad.
    */
-  public static final String AGGREGATION_NAME = "http://wsp.bbaw.de/aggregations/edoc";
+  public static final String AGGREGATION_NAME_PREFIX = "http://wsp.bbaw.de/edoc/";
   private static EdocToRdfTransformer instance;
 
   private EdocToRdfTransformer() throws ApplicationException {
@@ -87,10 +88,10 @@ public class EdocToRdfTransformer extends ToRdfTransformer {
     
   }
 
-  private HashMap<String, String> createMap(final MetadataRecord mdRecord) {
+  private HashMap<String, String> createMap(final MetadataRecord mdRecord) throws ApplicationException {
     HashMap<String, String> eDocPlaceholderMap = new HashMap<String, String>();
 
-    eDocPlaceholderMap.put("%%aggregation_name%%", AGGREGATION_NAME);
+    eDocPlaceholderMap.put("%%aggregation_uri%%", AGGREGATION_NAME_PREFIX+EdocIndexMetadataFetcherTool.getDocId(mdRecord.getRealDocUrl())+"/aggregation");
     eDocPlaceholderMap.put("%%creator_name%%", ToRdfTransformer.TRANSFORMER_CREATOR_NAME);
     eDocPlaceholderMap.put("%%creator_url%%", ToRdfTransformer.TRANSFORMER_CREATOR_URL);
     String uri = mdRecord.getRealDocUrl();
@@ -98,6 +99,12 @@ public class EdocToRdfTransformer extends ToRdfTransformer {
       uri = "";
     }
     eDocPlaceholderMap.put("%%resource_identifier%%", uri);
+    String urn = mdRecord.getUrn();
+    if (urn == null) {
+      urn = "";
+    }
+    eDocPlaceholderMap.put("%%resource_urn_identifier%%", urn);
+    
     String title = mdRecord.getTitle();
     if (title == null) {
       uri = "";
@@ -138,10 +145,7 @@ public class EdocToRdfTransformer extends ToRdfTransformer {
       language = "deu";
     }
     eDocPlaceholderMap.put("%%language%%", language);
-    String type = mdRecord.getType();
-    if (type == null) {
-      type = "";
-    }
+   
     eDocPlaceholderMap.put("%%mime_type%%", PDFDocument.MIME_TYPE);
     String description = mdRecord.getDescription();
     if (description == null) {
@@ -174,6 +178,51 @@ public class EdocToRdfTransformer extends ToRdfTransformer {
     }
 
     eDocPlaceholderMap.put("%%subjects%%", subString);
+    
+    String documentType = mdRecord.getDocumentType();
+    if (documentType == null) {
+      documentType = "";
+    }
+    eDocPlaceholderMap.put("%%document_type%%", documentType);
+    
+    String creator = mdRecord.getCreator();
+    if (creator == null) {
+      creator = "";
+    }
+    // split to given and family name
+    try {
+      String givenName = creator.substring(creator.indexOf(",")+1).trim();
+      eDocPlaceholderMap.put("%%given_name%%", givenName);
+      
+    }
+    catch(StringIndexOutOfBoundsException e) {
+      eDocPlaceholderMap.put("%%given_name%%", "");
+    }
+    try {
+      String familyName = creator.substring(0, creator.indexOf(",")).trim();     
+      eDocPlaceholderMap.put("%%family_name%%", familyName);      
+    }
+    catch(StringIndexOutOfBoundsException e) {
+      eDocPlaceholderMap.put("%%family_name%%", "");
+    }
+    
+    
+    
+    String ddc = mdRecord.getDdc();
+    if (ddc == null) {
+      ddc = "";
+    }
+    eDocPlaceholderMap.put("%%ddc%%", ddc);
+    
+    String numberPages = mdRecord.getPageCount()+"";    
+    eDocPlaceholderMap.put("%%number_pages%%", numberPages);
+    
+    String source = mdRecord.getInPublication();
+    if (source == null) {
+     source = "";
+    }
+    eDocPlaceholderMap.put("%%source%%", source);
+    
 
     return eDocPlaceholderMap;
   }
