@@ -139,6 +139,15 @@ public abstract class ToRdfTransformer {
     }    
   }
 
+  /**
+   * Check if an file is XML valid.
+   * @param xmlOutput - the url as String.
+   * @return 
+   */
+  public boolean checkValidation(final String xmlOutput) {
+    return XmlValidator.isValid(xmlOutput);
+  }
+  
   public String getXslInput() {
     return xslInput;
   }
