@@ -13,7 +13,6 @@ import java.util.Locale;
 import bbaw.wsp.parser.fulltext.document.PDFDocument;
 import bbaw.wsp.parser.fulltext.parsers.EdocIndexMetadataFetcherTool;
 import bbaw.wsp.parser.metadata.transformer.util.TemplateMapper;
-import bbaw.wsp.parser.tools.joseph.DCFetcherTool;
 import bbaw.wsp.parser.tools.joseph.MetadataRecord;
 import de.mpg.mpiwg.berlin.mpdl.exception.ApplicationException;
 
@@ -84,7 +83,15 @@ public class EdocToRdfTransformer extends ToRdfTransformer {
       e.printStackTrace();
     }
     
-   
+   // check validation    
+    File f = new File(outputUrl);
+    if(!this.checkValidation(f.getAbsolutePath())) {
+      System.out.println("the generated output file - "+f+" isn't XML valid. Please check the file!");
+    }
+    else
+    {
+      System.out.println("The generated output file - "+f+" is xml valid!");
+    }
     
   }
 
