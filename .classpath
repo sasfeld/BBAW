@@ -42,6 +42,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/saxon9-xom.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/saxon9-xpath.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/saxon9-xqj.jar"/>
-	<classpathentry kind="lib" path="C:/eclipseWorkspace/wsp/wspCms/trunk/wspCmsCore/lib/mpiwg-mpdl-xml.jar"/>
+	<classpathentry kind="lib" path="lib/mpiwg-mpdl-xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
