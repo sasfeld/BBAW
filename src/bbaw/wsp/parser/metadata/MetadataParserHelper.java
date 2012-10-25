@@ -9,7 +9,7 @@ import bbaw.wsp.parser.control.DebugMode;
  * @author Sascha Feldmann (wsp-shk1)
  *
  */
-public class ModsHelper {
+public class MetadataParserHelper {
 
 	/**
 	 * Build an array - this methods should be called when using the XPath selectNodes() - method.
