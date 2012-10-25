@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes">
+	<xsl:template match="/"> 
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:dc="http://purl.org/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:xi="http://www.w3.org/2001/XInclude">
+			<rdf:Description>
+				<ore:describes rdf:resource="<xsl:apply-templates select="//*:url">" />
+			</rdf:Description>
+		</rdf:RDF>
+	</xsl:template>
+	
+	<xsl:template match="*:url">
+		<xsl:variable name="modsUrl" select="//mods:url/text()" />
+		<xsl:apply-templates/><xsl:value-of select="$modsUrl" />
+	</xsl:template>
+</xsl:stylesheet>

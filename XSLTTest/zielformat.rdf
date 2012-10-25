@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:dc="http://purl.org/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<rdf:Description rdf:about="http://avh.bbaw.de/biblio/ReM">
+		<ore:describes rdf:resource="http://avh.bbaw.de/biblio/Aggr"/>
+		<rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+		<dc:creator rdf:parseType="Resource">
+			<foaf:name>Wissensspeicher</foaf:name>
+			<foaf:page rdf:resource="http:wsp.bbaw.de"/>
+		</dc:creator>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-09-18</dcterms:created>
+		<dcterms:modified/>
+		<dc:rights/>
+		<dcterms:rights rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://avh.bbaw.de/biblio/Aggr">
+		<ore:describedBy rdf:resource="http://avh.bbaw.de/biblio/ReM"/>
+		<rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+		<dc:title>Sekundärliteraturdatenbank zu Alexander von Humboldt</dc:title>
+		<dc:creator rdf:parseType="Resource">
+			<foaf:name>Regina Mikosch</foaf:name>
+			<foaf:mbox rdf:resource="mailto:mikosch@bbaw.de"/>
+		</dc:creator>
+		<dc:creator rdf:parseType="Resource">
+			<foaf:name>Gerold Hildebrand</foaf:name>
+			</dc:creator>
+		<dc:creator rdf:parseType="Resource">
+			<foaf:name>Alexander-von Humboldt-Forschungsstelle</foaf:name>
+			<foaf:page>http://www.bbaw.de/bbaw/Forschung/Forschungsprojekte/avh/de/Startseite</foaf:page>
+		</dc:creator>
+		<dc:creator rdf:parseType="Resource">
+			<foaf:name>Berlin Brandenburgische Akademie der Wissenschaften</foaf:name>
+			<foaf:page>http://www.bbaw.de</foaf:page>
+		</dc:creator>
+		<!-- Aggregated Resources -->
+		<ore:aggregates rdf:resource="http://avh.bbaw.de/biblio/"/>
+		<ore:aggregates rdf:resource="http://avh.bbaw.de/biblio/search.php"/>
+		<ore:aggregates rdf:resource="http://avh.bbaw.de/biblio/indices.php"/>
+		<ore:aggregates rdf:resource="http://avh.bbaw.de/biblio/images.php"/>
+		<ore:aggregates rdf:resource="http://#AvH-Vorhaben"/>
+		<ore:aggregates rdf:resource="http://#AvH"/>
+		<!--Alex von Humboldt -->
+		<!-- Administrative Elemente -->
+		<dc:title>Sekundärliteraturdatenbank zu Alexander von Humboldt</dc:title>
+		<dc:identifier rdf:resource="http://avh.bbaw.de/biblio/"/>
+		<dcterms:created>
+			<dcterms:W3CDTF>
+				<rdf:value>2009</rdf:value>
+			</dcterms:W3CDTF>
+		</dcterms:created>
+		<dcterms:issued>
+			<dcterms:W3CDTF>
+				<rdf:value>2009</rdf:value>
+			</dcterms:W3CDTF>
+		</dcterms:issued>
+		<dc:publisher rdf:resource="http://www.bbaw.de/bbaw/Forschung/Forschungsprojekte/avh/de/Startseite"/>
+		<dc:language>
+			<dcterms:ISO639-3>
+				<rdf:value>deu</rdf:value>
+			</dcterms:ISO639-3>
+		</dc:language>
+		<!-- dcmiType -->
+		<dc:type>Bibliographische Datenbank</dc:type>
+		<edm:hasType/>
+		<dc:format>
+			<dcterms:IMT rdf:value="text/html"/>
+			<!--<dcterms:DCMIType rdf:value="InteractiveResource"/> -->
+		</dc:format>
+		<dc:modified>
+			<dcterms:W3CDTF>
+				<rdf:value>Version 2.0.2 r3</rdf:value>
+			</dcterms:W3CDTF>
+		</dc:modified>
+		<dc:extent>ca. 7345 Titeleinträge</dc:extent>
+		<dc:abstract>Enthält alle Artikel, die Alexander von Humboldt zum Thema haben, 
+            und die in der Alexander-von-Humboldt-Forschungsstelle der Berlin-Brandenburgischen Akademie der Wissenschaften bibliographisch 
+            erfasst sind.</dc:abstract>
+		<dc:subject>
+			<!-- hier entweder kontrolliertes Vocab oder freie Schlagwörter -->
+		</dc:subject>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://#AvH Vorhaben">
+		<foaf:name>Alexander-von-Humboldt-Forschungsstelle</foaf:name>
+		<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+		<foaf:homepage rdf:resource="http://www.bbaw.de/bbaw/Forschung/Forschungsprojekte/avh/de/Startseite"/>
+		<foaf:openid rdf:resource="http://www.bbaw.de/bbaw/Forschung/Forschungsprojekte/avh/de/Startseite"/>
+		<!-- für die Laufzeit?<foaf:age></foaf:age> -->
+		<foaf:status>aktiv</foaf:status>
+		<!-- <foaf:fundedBy> </fundedBy> -->
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:title>Prof.</foaf:title>
+			<foaf:givenName>Eberhard</foaf:givenName>
+			<foaf:familiyName>Knobloch</foaf:familiyName>
+			<foaf:mbox rdf:resource="mailto:eberhard.knobloch@tu-berlin.de"/>
+			<dc:description>Projektleiter</dc:description>
+		</dc:contributor>
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:title>Dr.</foaf:title>
+			<foaf:givenName>Ingo</foaf:givenName>
+			<foaf:familiyName>Schwarz</foaf:familiyName>
+			<foaf:mbox rdf:resource="mailto:schwarz@bbaw.de"/>
+			<dc:description>Arbeitsstellenleiter</dc:description>
+		</dc:contributor>
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:title>Dr.</foaf:title>
+			<foaf:givenName>Ulrike</foaf:givenName>
+			<foaf:familiyName>Leitner</foaf:familiyName>
+			<foaf:mbox rdf:resource="mailto:leitner@bbaw.de"/>
+			<dc:description>Wissenschaftliche Mitarbeiterin</dc:description>
+		</dc:contributor>
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:title>Dr.</foaf:title>
+			<foaf:givenName>Thomas</foaf:givenName>
+			<foaf:familiyName>Schmuck</foaf:familiyName>
+			<dc:description>Wissenschaftlicher Mitarbeiter</dc:description>
+		</dc:contributor>
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:title>Dr.</foaf:title>
+			<foaf:givenName>Petra</foaf:givenName>
+			<foaf:familiyName>Werner</foaf:familiyName>
+			<foaf:mbox rdf:resource="mailto:gentz-werner@bbaw.de"/>
+			<dc:description>Wissenschaftliche Mitarbeiterin</dc:description>
+		</dc:contributor>
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:givenName>Romy</foaf:givenName>
+			<foaf:familiyName>Werther</foaf:familiyName>
+			<foaf:mbox rdf:resource="mailto:werther@bbaw.de"/>
+			<dc:description>Wissenschaftliche Mitarbeiterin</dc:description>
+		</dc:contributor>
+		<dc:contributor rdf:parseType="Resource">
+			<foaf:givenName>Regina</foaf:givenName>
+			<foaf:familiyName>Mikosch</foaf:familiyName>
+			<foaf:mbox rdf:resource="mailto:werther@bbaw.de"/>
+			<dc:description>Wissenschaftlich-technische Mitarbeiterin</dc:description>
+		</dc:contributor>
+		<!-- ?<foaf:nick>AvH</foaf:nick> -->
+		<dcterms:temporal>Neuzeit</dcterms:temporal>
+		<dcterms:spatial>Europa, Nordamerika, Lateinamerika</dcterms:spatial>
+		<dc:abstract>Sammlung und dokumentarische Aufbereitung des handschriftlichen Nachlasses 
+            (Briefwechsel, Reisetagebücher) Alexander von Humboldts (1769 - 1859). 
+            Edition der Briefe von und an A. v. Humboldt und der Tagebücher von seinen Reisen nach Amerika (1799-1804) 
+            und nach Rußland (1829). 
+            Edition der unselbständig erschienen Schriften A. v. Humboldts. Weitere Erforschung von Leben, 
+            Werk und Wirkung Humboldts und des wissenschaftsgeschichtlichen, historischen und kulturgeschichtlichen Umfeldes. 
+            Beratungs- und Auskunftstätigkeit.</dc:abstract>
+		<dcterms:temporal>Neuzeit</dcterms:temporal>
+		<dcterms:spatial/>
+		<foaf:member>Zentrum Preußen Berlin </foaf:member>
+		<!-- oder auch <dcterms:partOf>dann aber rüchweisende Relation aufnehmen </dcterms:partOf>-->
+	</rdf:Description>
+	<!-- Beschreibung einer Person als Topic?
+    <rdf:Description rdf:about="#AvH">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/> 
+        
+    </rdf:Description> -->
+	<rdf:Description rdf:about="http://avh.bbaw.de/biblio/">
+		<dc:title>Startseite</dc:title>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://avh.bbaw.de/biblio/search.php">
+		<dc:title>Suche</dc:title>	
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://avh.bbaw.de/biblio/indices.php">
+		<dc:title>Register</dc:title>
+		<dcterms:tableOfContents>Links zu Autorenregister, Bibliographienverzeichnis, Ortsregister, Personenregister, Stichwortregister, Titelregister</dcterms:tableOfContents>	
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="http://avh.bbaw.de/biblio/images.php">
+			<dc:title>Über die Bilder auf diesen Seiten</dc:title>
+	</rdf:Description>
+</rdf:RDF>

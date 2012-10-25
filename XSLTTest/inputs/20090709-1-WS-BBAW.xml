@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+    <recordInfo><mods:recordIdentifier>20090709-1-WS-BBAW</mods:recordIdentifier>
+        <recordContentSource>Berlin-Brandenburgische Akademie der Wissenschaften</recordContentSource>
+        <languageOfCataloging><languageTerm type="code" authority="iso639-3">deu</languageTerm>
+        </languageOfCataloging>
+        <mods:recordCreationDate encoding="w3cdtf">2009-07-09</mods:recordCreationDate>
+        <mods:recordChangeDate encoding="w3cdtf">2009-09-11</mods:recordChangeDate>
+    </recordInfo>
+<mods:location><mods:url>http://pom.bbaw.de/mze/</mods:url>
+    </mods:location>
+    <mods:titleInfo type="uniform">
+        <mods:title>ΓΝΩΘΙ ΣΑΥΤΟΝ oder Magazin zur Erfahrungs-Seelenkunde als ein Lesebuch für             Gelehrte und Ungelehrte.</mods:title>
+    </mods:titleInfo>
+    <mods:abstract>	 Das Magazin zur Erfahrungsseelenkunde bildet innerhalb der Begründung der Anthropologie und einer psychologisch orientierten Medizin eine wichtige Schaltstelle. Damit steht diese Zeitschrift gegenwärtig im Mittelpunkt der Forschung. Das Magazin ist allerdings in gedruckter Form schwer erhältlich und als Ganzes bisher noch nicht wissenschaftlich ediert worden (vgl. zum Stand der Forschung die Moritz-Bibliographie http://www.bbaw.de/forschung/moritz/biblio/index.html). Die vorliegende Edition des Magazins zur Erfahrungsseelenkunde ist nicht Teil der Moritz-Ausgabe, begreift sich aber als Ergänzung derselben. Sie leitet eine neue Stufe in der Erforschung dieses Textkorpus ein, das für viele Fachrichtungen einen bedeutenden Bezugspunkt darstellt.
+
+	 Der Text des Magazins soll, dem Prinzip des open access folgend, der Öffentlichkeit frei zur Verfügung stehen. Die Texte sind in XML-Dateien erfaßt. Wir bieten einen strukturierten Volltext, der zusätzlich nach Autoren der Beiträge und in Zukunft nach Personen und Orten durchsucht werden kann.
+    </mods:abstract>
+    <mods:originInfo><mods:place><mods:placeTerm>Berlin</mods:placeTerm>
+        </mods:place>
+        <mods:publisher>Berlin-Brandenburgische Akademie der Wissenschaften</mods:publisher>
+        <mods:dateIssued encoding="w3cdtf">2009-04-01</mods:dateIssued>
+    </mods:originInfo>
+    <mods:name type="personal" ID="PND118584162">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Original Content</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Moritz</mods:namePart>
+        <mods:namePart type="given">Karl Philipp</mods:namePart>
+    </mods:name>
+    <mods:name type="personal" ID="PND11624741X">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Original Content</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Pockels</mods:namePart>
+        <mods:namePart type="given">Karl Friedrich</mods:namePart>
+    </mods:name>
+    <mods:name type="personal" ID="PND11857647X">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Original Content</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Maimon</mods:namePart>
+        <mods:namePart type="given">Salomon</mods:namePart>
+    </mods:name>
+    <mods:name type="personal" ID="WSP411664020060">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Content Revision</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Dickson</mods:namePart>
+        <mods:namePart type="given">Sheila</mods:namePart>
+    </mods:name>
+    <mods:name type="personal" ID="WSP411664020073">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Content Revision</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Goldmann</mods:namePart>
+        <mods:namePart type="given">Stefan</mods:namePart>
+    </mods:name>
+    <mods:name type="personal" ID="WSP411664020061">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Content Revision</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Wingertszahn</mods:namePart>
+        <mods:namePart type="given">Christof</mods:namePart>
+    </mods:name>
+    <mods:name type="personal" ID="WSP411664020067">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">Digital Adaptation</mods:roleTerm>
+        </mods:role>
+        <mods:namePart type="family">Walkowski</mods:namePart>
+        <mods:namePart type="given">Niels-Oliver Walkowski</mods:namePart>
+    </mods:name>
+    <mods:name type="corporate">
+        <mods:role><mods:roleTerm type="text" authority="BBAW">BBAWInternalBody</mods:roleTerm>
+        </mods:role>
+        <mods:namePart>Karl-Philipp-Moritz-Ausgabe</mods:namePart>
+    </mods:name>
+    <mods:classification authority="DDC">100</mods:classification>
+    <mods:classification authority="DCMIType">InteractiveResource</mods:classification>
+    <mods:subject authority="SWD">
+        <mods:topic>Anthropologie</mods:topic>
+        <mods:topic>Erfahrungsseelenkunde</mods:topic>
+        <mods:topic>Medizin</mods:topic>
+        <mods:topic>Psychiatrie</mods:topic>
+        <mods:topic>Psychologie</mods:topic>
+        <mods:topic>Traum</mods:topic>
+    </mods:subject>
+    <mods:subject><mods:temporal point="start">1700</mods:temporal>
+        <mods:temporal point="end">1800</mods:temporal>
+    </mods:subject>
+    <mods:subject><mods:geographic>Deutsches Reich</mods:geographic>
+        <mods:geographic>Preußen</mods:geographic>
+        <mods:geographic>Berlin</mods:geographic>
+    </mods:subject>
+    <mods:subject><mods:name type="personal">
+            <mods:namePart>Bendavid, Lazarus</mods:namePart>
+        </mods:name>
+        <mods:name type="personal" ID="PND118933876">
+            <mods:namePart>Herz, Markus</mods:namePart>
+        </mods:name>
+        <mods:name type="personal" ID="PND116842717">
+            <mods:namePart>Mauchart, Immanuel David</mods:namePart>
+        </mods:name>
+        <mods:name type="personal" ID="PND118580744">
+            <mods:namePart>Mendelssohn, Moses</mods:namePart>
+        </mods:name>
+        <mods:name type="personal" ID="PND117481718">
+            <mods:namePart>Spazier, Karl</mods:namePart>
+        </mods:name>
+    </mods:subject>
+    <mods:language><mods:languageTerm type="code" authority="iso639-3">deu</mods:languageTerm>
+    </mods:language>
+    <mods:physicalDescription><mods:internetMediaType>text/html</mods:internetMediaType>
+        <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+        <mods:note type="description">Digitale Edition setzt sich aus HTML, JavaScript, XML und XQuery Komponenten zusammen. Die letzten beiden befinden sich innerhalb der SADE Infrastruktur auf POM</mods:note>
+    </mods:physicalDescription>
+    <mods:accessCondition type="use and reproduction">by-nc-nd</mods:accessCondition>
+    <mods:extension><mods:host><mods:adminDescription><mods:status>closed</mods:status>
+                <mods:source type="existCollection">http://pom.bbaw.de:8085/exist/rest/db/mes/data/</mods:source>
+                <mods:rootElement>mods:mods</mods:rootElement>
+                <mods:identifier>//publicationStmt/idno[./@type = 'wsp']</mods:identifier>
+            </mods:adminDescription>
+            <mods:metaDescription><mods:identifier contentType="idInHost" type="idInHost">//publicationStmt/idno[./@type = 'wsp']</mods:identifier>
+                <mods:titleInfo contentType="XPath">
+                    <mods:title contentType="XPath">//titleStmt/title</mods:title>
+                    <mods:subTitle/>
+                    <mods:partNumber contentType="XPath">//sourceDesc/bibl/idno</mods:partNumber>
+                    <mods:partName contentType="XPath">//idno[./@type= "Band"]/@type</mods:partName>
+                </mods:titleInfo>
+                <mods:abstract/>
+                <mods:tableOfContents contentType="XPath">//body/list/item</mods:tableOfContents>
+                <mods:originInfo><mods:place><mods:placeTerm>Berlin</mods:placeTerm>
+                    </mods:place>
+                    <mods:publisher>Berlin-Brandenburgische Akademie der Wissenschaften</mods:publisher>
+                    <mods:dateIssued encoding="w3cdtf" contentType="XPath">//publicationStmt/date</mods:dateIssued>
+                </mods:originInfo>
+                <mods:name type="personal" ID="PND118584162">
+                    <mods:role><mods:roleTerm type="text" authority="BBAW">Original Content</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Moritz</mods:namePart>
+                    <mods:namePart type="given">Karl Philipp</mods:namePart>
+                    <mods:description>Herausgeber der Originalausgabe</mods:description>
+                </mods:name>
+                <mods:name type="personal" ID="PND11624741X">
+                    <mods:role><mods:roleTerm type="text" authority="BBAW">Original Content</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Pockels</mods:namePart>
+                    <mods:namePart type="given">Karl Friedrich</mods:namePart>
+                    <mods:description>Herausgeber der Originalausgabe</mods:description>
+                </mods:name>
+                <mods:name type="personal" ID="PND11857647X">
+                    <mods:role><mods:roleTerm type="text" authority="BBAW">Original Content</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Maimon</mods:namePart>
+                    <mods:namePart type="given">Salomon</mods:namePart>
+                    <mods:description>Herausgeber der Originalausgabe</mods:description>
+                </mods:name>
+                <mods:name type="personal">
+                    <mods:role><mods:roleTerm type="text" authority="BBAW">Content Revision</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Dickson</mods:namePart>
+                    <mods:namePart type="given">Sheila</mods:namePart>
+                    <mods:description/>
+                </mods:name>
+                <mods:name type="personal">
+                    <mods:role><mods:roleTerm type="text" authority="BBAW">Content Revision</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Goldmann</mods:namePart>
+                    <mods:namePart type="given">Stefan</mods:namePart>
+                    <mods:description/>
+                </mods:name>
+                <mods:name type="personal">
+                    <mods:role><mods:roleTerm type="text" authority="BBAW">Content Revision</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Wingertszahn</mods:namePart>
+                    <mods:namePart type="given">Christof</mods:namePart>
+                    <mods:description>Leiter des Moritz-Vorhabens</mods:description>
+                </mods:name>
+                <mods:name type="personal">
+                    <mods:role><mods:roleTerm type="text" authority="MARC">Digital Adaptation</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart type="family">Walkowski</mods:namePart>
+                    <mods:namePart type="given">Niels-Oliver Walkowski</mods:namePart>
+                    <mods:description>Konzept, Design und Programmierung der Digitalen Edition</mods:description>
+                </mods:name>
+                <mods:name type="corporate">
+                    <mods:role><mods:roleTerm>BBAWInternalBody</mods:roleTerm>
+                    </mods:role>
+                    <mods:namePart>Karl-Philipp-Moritz-Ausgabe</mods:namePart>
+                </mods:name>
+                <mods:classification authority="DDC">100</mods:classification>
+                <mods:classification authority="DCMIType">Text</mods:classification>
+                <mods:subject authority="SWD">
+                    <mods:topic>Anthropologie</mods:topic>
+                    <mods:topic>Erfahrungsseelenkunde</mods:topic>
+                    <mods:topic>Medizin</mods:topic>
+                    <mods:topic>Psychiatrie</mods:topic>
+                    <mods:topic>Psychologie</mods:topic>
+                    <mods:topic>Traum</mods:topic>
+                    <mods:topic contentType="XPath">//keywords/list/item</mods:topic>
+                </mods:subject>
+                <mods:subject><mods:temporal point="start">1700</mods:temporal>
+                    <mods:temporal point="end">1800</mods:temporal>
+                </mods:subject>
+                <mods:subject><mods:geographic>Deutsches Reich</mods:geographic>
+                    <mods:geographic>Preußen</mods:geographic>
+                    <mods:geographic>Berlin</mods:geographic>
+                </mods:subject>
+                <mods:subject><mods:name><mods:namePart contentType="XPath">//persName/@nymRef</mods:namePart>
+                    </mods:name>
+                </mods:subject>
+                <mods:language><mods:languageTerm type="code" authority="iso639-3">deu</mods:languageTerm>
+                </mods:language>
+                <mods:physicalDescription><mods:internetMediaType>text/xml</mods:internetMediaType>
+                    <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+                    <mods:note type="description">Auf der Basis von TEIp5 digitalisierte kritische Edition der Originalausgabe</mods:note>
+                </mods:physicalDescription>
+                <mods:relatedItem type="host" xlink:title="20090709-1-WS-BBAW"/>
+                <mods:accessCondition type="use and reproduction">by-nc-nd</mods:accessCondition>
+                <mods:note type="description"/>
+            </mods:metaDescription>
+        </mods:host>
+    </mods:extension>
+    <mods:note>Schlagwörter noch unbearbeitet. Lösung für die dynamische Integration der untergeordneten Ressourcen muß noch gefunden werden</mods:note>
+</mods>
